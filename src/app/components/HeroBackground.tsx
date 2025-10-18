@@ -10,7 +10,7 @@ export default function HeroBackground() {
         alt="Interior background"
         fill
         priority
-        className="fixed inset-0 object-cover object-center -z-10 opacity-70"
+        className="fixed inset-0 object-cover object-center -z-10 opacity-60"
       />
       {/* Dim overlay (tweak opacity as you like) */}
     </>
