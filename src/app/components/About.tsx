@@ -4,7 +4,7 @@ import TiltedCard from './TiltedCard';
 const About = () => {
     return (
 <section className="my-10 px-4 sm:px-8">
-    <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center mt-10">About</h2>
+    <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center mt-20">About</h2>
     <div className="mx-auto max-w-5xl">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-18">
             <TiltedCard
