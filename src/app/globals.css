@@ -81,6 +81,7 @@
   --border: #E8DED8;
   --input: #E8DED8;
   --ring: #AFA6A2;
+  --footer-background: #8B6351;
 
   /* placeholder chart palette (ok to keep) */
   --chart-1: oklch(0.646 0.222 41.116);

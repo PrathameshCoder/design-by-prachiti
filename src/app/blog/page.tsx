@@ -16,13 +16,21 @@ type Blog = {
 const fileNames = fs.readdirSync(path.join(process.cwd(), "content"))
   .filter((f) => f.endsWith(".md"));
 
+  // parse front-matter from each file
 const blogs: Blog[] = fileNames.map((fileName) => {
   const fullPath = path.join(process.cwd(), "content", fileName);
-  const fileContent = fs.readFileSync(fullPath, "utf8");
+  // Read file and normalize line endings
+  const fileContent = fs.readFileSync(fullPath, "utf8").replace(/\r\n/g, "\n");
   const { data } = matter(fileContent);
 
-  const slug = path.parse(fileName).name;
-  const meta = data as Partial<Omit<Blog, "slug">>;
+  // Extract slug from filename
+  const fileSlug = path.parse(fileName).name;
+  const meta = data as Partial<Blog>;
+
+  // Use the slug as title if title is missing
+  const slug = meta.slug ?? fileSlug;
+
+
 
   // Build the Blog object explicitly so TS is happy
   return {
@@ -35,6 +43,7 @@ const blogs: Blog[] = fileNames.map((fileName) => {
   };
 });
 
+// Sort blogs by date (newest first)
 export default function BlogPage() {
   return (
     <main className="min-h-screen px-4 py-12 bg-background text-foreground">

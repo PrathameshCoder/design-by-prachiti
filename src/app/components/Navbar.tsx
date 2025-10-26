@@ -16,7 +16,7 @@ export default function Navbar() {
             alt="Design by Prachiti logo"
             width={200}
             height={200}
-            className="h-45 w-auto"
+            className="h-auto w-auto "
           />
         </Link>
       </div>
@@ -60,7 +60,7 @@ export default function Navbar() {
               alt="Design by Prachiti logo"
               width={160}
               height={160}
-              className="h-32 w-auto"
+              className="h-auto w-auto"
             />
           </Link>
           <button
